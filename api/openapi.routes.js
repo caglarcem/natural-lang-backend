@@ -1,9 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const { getOpenApiAnswer } = require('./openapi.controller');
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-    res.send('Response to the question');
-});
+router.get('/', getOpenApiAnswer);
 
 module.exports = router;

@@ -6,7 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const openapiRouter = require('./api/routes/openapi');
+const openapiRouter = require('./api/openapi.routes');
 const cors = require('cors');
 
 const corsOptions = {
