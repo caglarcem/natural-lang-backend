@@ -2,12 +2,12 @@ const { Language } = require('../models/language');
 const { Translate } = require('@google-cloud/translate').v2;
 const dotenv = require('dotenv');
 
-// Creates a client
 dotenv.config();
 
 const translateProjectId = process.env.TRANSLATE_PROJECT_ID;
 const translateApiKey = process.env.TRANSLATE_API_KEY;
 
+// Creates a google translate client
 const translate = new Translate({
     projectId: translateProjectId,
     key: translateApiKey,

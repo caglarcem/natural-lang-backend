@@ -5,9 +5,16 @@ const {
 
 const getTranslateAnswer = async (req, res, next) => {
     const incomingSentence = req.query.incomingSentence;
-    const languageCode = req.query.languageCode;
+    const fromLanguageCode = req.query.fromLanguageCode;
+    const toLanguageCode = req.query.toLanguageCode;
 
-    const translation = await getTranslation(incomingSentence, languageCode);
+    console.log('IN: ', req.query);
+
+    const translation = await getTranslation(
+        incomingSentence,
+        fromLanguageCode,
+        toLanguageCode
+    );
 
     return res.send(translation);
 };

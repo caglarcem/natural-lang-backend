@@ -8,8 +8,16 @@ const {
 
 dotenv.config();
 
-const getTranslation = async (incomingSentence, languageCode) => {
-    return translateSentence(incomingSentence, languageCode);
+const getTranslation = async (
+    incomingSentence,
+    fromLanguageCode,
+    toLanguageCode
+) => {
+    return translateSentence(
+        incomingSentence,
+        fromLanguageCode,
+        toLanguageCode
+    );
 };
 
 const getSupportedLanguages = async () => {
