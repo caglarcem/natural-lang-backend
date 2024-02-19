@@ -1,16 +1,25 @@
 const { Language } = require('../models/language');
 const { Translate } = require('@google-cloud/translate').v2;
+const dotenv = require('dotenv');
 
 // Creates a client
+dotenv.config();
+
+const translateProjectId = process.env.TRANSLATE_PROJECT_ID;
+const translateApiKey = process.env.TRANSLATE_API_KEY;
+
 const translate = new Translate({
-    projectId: 'sim-translate-410608',
-    key: 'AIzaSyBYDepsfJ-syCXA_Nz474FMOp_Oez_3nc4',
+    projectId: translateProjectId,
+    key: translateApiKey,
 });
 
 const supportedLanguages = async () => {
+    // console.log('translate project', 'sim-translate-410608');
+    // console.log('translate id', 'AIzaSyBYDepsfJ-syCXA_Nz474FMOp_Oez_3nc4');
+
     // TODO Real
     // Lists available translation language with their names
-    // const [languages] = await translate.getLanguages();
+    //const [languages] = await translate.getLanguages();
 
     // TODO mock
     const languages = mockLanguages;
