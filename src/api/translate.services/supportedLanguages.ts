@@ -1,4 +1,3 @@
-const { Language } = require('../models/language');
 const { Translate } = require('@google-cloud/translate').v2;
 import Language from '../models/language';
 import * as dotenv from 'dotenv';
@@ -20,17 +19,19 @@ const supportedLanguages = async () => {
 
     // TODO Real
     // Lists available translation language with their names
-    const [languages]: Language[][] = await translate.getLanguages();
+    // const [languages]: Language[][] = await translate.getLanguages();
 
     // TODO mock
-    // const languages: Language[] = mockLanguages;
+    const languages: Language[] = mockLanguages;
 
     const languageList: Language[] = languages.map((language: Language) => {
-        return new Language(language.code, language.name);
+        return { code: language.code, name: language.name };
     });
 
     return languageList;
 };
+
+export { supportedLanguages };
 
 const mockLanguages: Language[] = [
     { code: 'af', name: 'Afrikaans' },
@@ -170,5 +171,3 @@ const mockLanguages: Language[] = [
     { code: 'jv', name: 'Javanese' },
     { code: 'zh-CN', name: 'Chinese (Simplified)' },
 ];
-
-module.exports = { supportedLanguages };

@@ -1,15 +1,16 @@
-const express = require('express');
-const router = express.Router();
-const {
+import express from 'express';
+import {
     getTranslatedSpeech,
-    getTranslateAnswer,
+    getTranslatedText,
     getLanguages,
-} = require('./translate.controller');
+} from './translate.controller';
+
+const router = express.Router();
 
 router.get('/languages', getLanguages);
 
-router.get('/answer', getTranslateAnswer);
+router.get('/translateText', getTranslatedText);
 
-router.get('/translatedSpeech', getTranslatedSpeech);
+router.get('/translateSpeech', getTranslatedSpeech);
 
-module.exports = router;
+export default router;

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-var express = require('express');
+import express from 'express';
 
 const router = express.Router();
 

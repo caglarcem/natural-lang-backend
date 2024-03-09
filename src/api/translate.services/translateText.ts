@@ -12,7 +12,7 @@ const translate = new Translate({
     key: translateApiKey,
 });
 
-const translateSentence = async (
+const translateText = async (
     incomingSentence: string,
     fromLanguageCode: string,
     toLanguageCode: string
@@ -20,22 +20,22 @@ const translateSentence = async (
     let translation: string = '';
 
     // TODO real
-    try {
-        [translation] = await translate.translate(incomingSentence, {
-            from: fromLanguageCode,
-            to: toLanguageCode,
-        });
+    // try {
+    //     [translation] = await translate.translate(incomingSentence, {
+    //         from: fromLanguageCode,
+    //         to: toLanguageCode,
+    //     });
 
-        console.log('translation: ', translation);
+    //     console.log('translation: ', translation);
 
-        // return translation;
-    } catch (err) {
-        console.log('ERR: ', err);
-    }
+    //     // return translation;
+    // } catch (err) {
+    //     console.log('ERR: ', err);
+    // }
 
     // TODO mock
-    // translation = 'some translation';
+    translation = 'some translation';
     return translation;
 };
 
-export { translateSentence };
+export { translateText };

@@ -1,11 +1,12 @@
 import express, { Request, Response, NextFunction } from 'express';
 import indexRouter from './routes/index';
+import createError from 'http-errors';
+import cors from 'cors';
 import path from 'path';
-const createError = require('http-errors');
-const cors = require('cors');
-const translateRouter = require('./api/translate.routes');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+
+import translateRouter from './api/translate.routes';
 
 const corsOptions = {
     origin: '*',
