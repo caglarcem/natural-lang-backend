@@ -4,7 +4,7 @@ const {
     getTranslatedSpeech,
     getTranslateAnswer,
     getLanguages,
-} = require('./translate.controller.js');
+} = require('./translate.controller');
 
 router.get('/languages', getLanguages);
 

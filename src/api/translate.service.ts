@@ -1,17 +1,15 @@
 const dotenv = require('dotenv');
-const {
-    translateSentence,
-} = require('./translate.services/translateSentence.js');
+const { translateSentence } = require('./translate.services/translateSentence');
 const {
     supportedLanguages,
-} = require('./translate.services/supportedLanguages.js');
+} = require('./translate.services/supportedLanguages');
 
 dotenv.config();
 
 const getTranslation = async (
-    incomingSentence,
-    fromLanguageCode,
-    toLanguageCode
+    incomingSentence: string,
+    fromLanguageCode: string,
+    toLanguageCode: string
 ) => {
     return translateSentence(
         incomingSentence,
