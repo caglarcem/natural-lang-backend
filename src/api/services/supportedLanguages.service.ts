@@ -13,7 +13,7 @@ const translate = new Translate({
     key: translateApiKey,
 });
 
-const supportedLanguages = async () => {
+const getSupportedLanguages = async () => {
     console.log('translate project', 'sim-translate-410608');
     console.log('translate id', 'AIzaSyBYDepsfJ-syCXA_Nz474FMOp_Oez_3nc4');
 
@@ -31,7 +31,7 @@ const supportedLanguages = async () => {
     return languageList;
 };
 
-export { supportedLanguages };
+export { getSupportedLanguages };
 
 const mockLanguages: Language[] = [
     { code: 'af', name: 'Afrikaans' },

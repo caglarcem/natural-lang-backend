@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { getTextTranslation, getSupportedLanguages } from './translate.service';
+import { translateText } from './services/translateText.service';
+import { getSupportedLanguages } from './services/supportedLanguages.service';
 
 interface TranslationRequest {
     incomingSentence: string;
@@ -12,6 +13,7 @@ const getLanguages = async (req: any, res: any, next: any) => {
     return res.send(languages);
 };
 
+/** Translate text to text **/
 const getTranslatedText = async (req: any, res: any, next: any) => {
     const translationRequest: TranslationRequest = {
         incomingSentence: req.query.incomingSentence,
@@ -19,11 +21,12 @@ const getTranslatedText = async (req: any, res: any, next: any) => {
         toLanguageCode: req.query.toLanguageCode,
     };
 
-    const translation = await translateText(translationRequest);
+    const translation = await getTranslationResult(translationRequest);
 
     return res.send(translation);
 };
 
+/** Text to speech **/
 const getTranslatedSpeech = async (
     req: Request,
     res: Response,
@@ -35,15 +38,16 @@ const getTranslatedSpeech = async (
         toLanguageCode: req.query.toLanguageCode as string,
     };
 
-    const textTranslation = await translateText(translationRequest);
-    // Handle the result as needed
+    const translatedText = await getTranslationResult(translationRequest);
+
+    // TODO Translate text to speech using textToSpeech.service
 };
 
-const translateText = async (translationRequest: TranslationRequest) => {
+const getTranslationResult = async (translationRequest: TranslationRequest) => {
     const { incomingSentence, fromLanguageCode, toLanguageCode } =
         translationRequest;
 
-    return await getTextTranslation(
+    return await translateText(
         incomingSentence,
         fromLanguageCode,
         toLanguageCode
