@@ -39,7 +39,11 @@ const getTranslatedSpeech = async (
         toLanguageCode: req.query.toLanguageCode as string,
     };
 
+    console.log('Translation request: ', translationRequest);
+
     const translatedText = await getTranslationResult(translationRequest);
+
+    console.log('Translated text: ', translatedText);
 
     // Convert translate text to speech using textToSpeech.service
     const audioBuffer: Buffer = await convertTextToSpeech(translatedText);

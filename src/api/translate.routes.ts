@@ -9,8 +9,8 @@ const router = express.Router();
 
 router.get('/languages', getLanguages);
 
-router.get('/translateText', getTranslatedText);
+router.get('/translateToText', getTranslatedText);
 
-router.get('/translateSpeech', getTranslatedSpeech);
+router.get('/translateToSpeech', getTranslatedSpeech);
 
 export default router;
