@@ -5,7 +5,9 @@ import cors from 'cors';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import { createServer, Server as HttpServer } from 'http';
 
+import { createWebSocketServer } from './api/services/webSocket.service';
 import translateRouter from './api/translate.routes';
 
 const corsOptions = {
@@ -44,6 +46,15 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     // render the error page
     res.status(err.status || 500);
     res.render('error');
+});
+
+// Websocket server
+const server: HttpServer = createServer(app);
+
+createWebSocketServer(server);
+
+server.listen(8000, () => {
+    console.log('Websocket server is running on port 8000');
 });
 
 export default app;

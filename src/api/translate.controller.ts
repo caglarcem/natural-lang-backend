@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { translateText } from './services/translateText.service';
+import { convertTextToSpeech } from './services/textToSpeech.service';
 import { getSupportedLanguages } from './services/supportedLanguages.service';
 
 interface TranslationRequest {
@@ -31,7 +32,7 @@ const getTranslatedSpeech = async (
     req: Request,
     res: Response,
     next: NextFunction
-) => {
+): Promise<Buffer> => {
     const translationRequest: TranslationRequest = {
         incomingSentence: req.query.incomingSentence as string,
         fromLanguageCode: req.query.fromLanguageCode as string,
@@ -40,7 +41,10 @@ const getTranslatedSpeech = async (
 
     const translatedText = await getTranslationResult(translationRequest);
 
-    // TODO Translate text to speech using textToSpeech.service
+    // Convert translate text to speech using textToSpeech.service
+    const audioBuffer: Buffer = await convertTextToSpeech(translatedText);
+
+    return audioBuffer;
 };
 
 const getTranslationResult = async (translationRequest: TranslationRequest) => {

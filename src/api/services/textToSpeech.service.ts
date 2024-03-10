@@ -1,4 +1,4 @@
-const { Translate } = require('@google-cloud/translate').v2;
+const TextToSpeech = require('@google-cloud/text-to-speech');
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -7,35 +7,26 @@ const translateProjectId: string | undefined = process.env.TRANSLATE_PROJECT_ID;
 const translateApiKey: string | undefined = process.env.TRANSLATE_API_KEY;
 
 // Creates a Google Translate client
-const translate = new Translate({
+const client = new TextToSpeech.TextToSpeechClient({
     projectId: translateProjectId,
     key: translateApiKey,
 });
 
-const translateText = async (
-    incomingSentence: string,
-    fromLanguageCode: string,
-    toLanguageCode: string
-): Promise<string> => {
-    let translation: string = '';
+const convertTextToSpeech = async (
+    incomingSentence: string
+): Promise<Buffer> => {
+    const request = {
+        input: { incomingSentence },
+        voice: {
+            languageCode: 'en-US',
+            name: 'en-US-Wavenet-D',
+            ssmlGender: 'NEUTRAL',
+        },
+        audioConfig: { audioEncoding: 'LINEAR16' },
+    };
 
-    // TODO real
-    // try {
-    //     [translation] = await translate.translate(incomingSentence, {
-    //         from: fromLanguageCode,
-    //         to: toLanguageCode,
-    //     });
-
-    //     console.log('translation: ', translation);
-
-    //     // return translation;
-    // } catch (err) {
-    //     console.log('ERR: ', err);
-    // }
-
-    // TODO mock
-    translation = 'some translation';
-    return translation;
+    const [response] = await client.synthesizeSpeech(request);
+    return response.audioContent as Buffer;
 };
 
-export { translateText };
+export { convertTextToSpeech };
