@@ -22,8 +22,13 @@ const convertTextToSpeech = async (
     const [response] = await client.synthesizeSpeech(request);
 
     console.log('SPEECH RESPONSE: ', response);
+    console.log('eben');
 
-    return response.audioContent as Buffer;
+    const responseBuffer = response.audioContent as Buffer;
+
+    console.log('Response buffer: ', responseBuffer);
+
+    return responseBuffer;
 };
 
 export { convertTextToSpeech };

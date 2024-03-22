@@ -1,1 +1,13 @@
-{}
+{
+    "type": "service_account",
+    "project_id": "sim-translate-410608",
+    "private_key_id": "36fb3087896d72b3d71f29cbce41bdfb8e094250",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCZrMAXbfl+u9++\n+a4iEGYbi0g6wgJwjI0cmmssbtJMRVkHoHT6I41kjaEEzY6LAnyFkRFv9J3bvG9p\nZggaJDcHMVqOpLboNdLnhDs0PERo+nEdb16szxVGsLBImyj+Z9U+0p0H0MT7j9kc\nogshFAkG18b04HNxES+3aHvc9HsTfGzA+La5EpfdSGMG531sOLpMVT+b8pscf4po\n6CXHrpbW737RuTvPY/Opbo6/cH4ZpykMpLCcJc3wzwGpfl/Yn0LTnP/EHJBVW05Q\nZInrEi2nKPXW9H9RD/+o2hNp+pNTavT4hOrHMA66qeKWlsLyDmPMx1wWhVZkn3Ke\neHKdTbCfAgMBAAECggEAS45SC7L4fkUk5yKfaQQjD9vVMX598JRKNQv/MaNzJija\ncxODMBEWzZ+M0W23bcVVL955clAU5RqqtGmEBkZT/+dWHNgDTfxYq5ep/C69e9fW\nkaBWLiTK0yzAH5KZ/ytR/0dSCautjfnVx2wsiKDvJzwkB/XrDGZkzYpDjAlwEc3S\nIeTU97uReKrpXUc7UDrcxe6Fd+uG26yX3KXosZjnvubcVnqFoT1bnaLSq7HJIAw6\nLXdj0X7dUuuFK7vlJZADBOn2v1E7DoUYORAmsZaaEOb9vh2noC3vZ5S3twUiTScd\nLEThZtSwibbZECPC52NFqyIGOXRmzxFaEXFBvKYckQKBgQDJlflSCPFC19wDAZBK\nN7qPLtMQ8fYp22DCIuk7hHtrG+keXhzoGBbhrnUT4FbHCNQBnjpKOnRrgNgAmaQ4\n6uIgIc3AobUd4N/iSwW1l/BS6IyWT16PutjwBoe3KnKGeMblTvXUaqQNh5cWsqjL\nNWy7uk0CjpqElDdE708BtuXvWwKBgQDDKATB2F/tn+aNHVBEcyD/rqa3tbBfNb9e\nMwqFFJUe3IQF7tAkhnrXg5dbtSHH1KvbWoJZ+wYSCW/44nZnrwtjU6em6oktlztZ\nON2+LS1chS1ETTo00d5mRNdc/0Anh9weIH5PdKq1bxP7ZJUalwDLygXmFH0xqlVz\nh4GivzjrDQKBgQCyrsAXihuoX0QCWiF2190Cy8OE8qR7R5yFmIJaIj1vnIbPRyai\nR7AIjSXz31esBtQ9Nu5+G0BUhhlwtr9NQE39o1kIlY3AFTL+F/fQlgQMyVrMZT/x\ncPKYF4G2xuZK8cWDPrFCfuA5qeUv1l8t+IYQBLv8N0EZoXM4JFNItsErnwKBgFRa\n7/N6O7zS6S0GBrQPr6vVKmsuNdZxvQ5SsbFkfDCi0M5fs8iV+HM/hiU13iwqWT6v\nmLicMLuLKMND4DphB2MfvdAAgNscC6M9WVvi20CqsC5d01MRhDhgeVbRXkG4EAVV\ntkNSApf6M4DusSSVMNrlsDcLlDHrlpQhdn+KeGfhAoGAc5P5pCVsycNUbGHetHFi\nFAiKZjTdMP99aryoJaF0oZNLiDdYHxv1xLdaPJN/P5T7klXrFhbevZ/ufw6l14Y9\n9rtnCJBP8kjWTRXGDHJvw+ux2l2J4n3aJSPsyIBXLhfWDFnwga/iUnXvKtKPMu9M\n/6tQONWjY+7BuOiQOD+pMjI=\n-----END PRIVATE KEY-----\n",
+    "client_email": "sim-translate-service-account@sim-translate-410608.iam.gserviceaccount.com",
+    "client_id": "113929008923754338470",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sim-translate-service-account%40sim-translate-410608.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+}
