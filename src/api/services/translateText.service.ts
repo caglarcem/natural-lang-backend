@@ -20,21 +20,21 @@ const translateText = async (
 
     // TODO real
     try {
-        // [translation] = await translate.translate(
-        //     translationRequest.incomingSentence,
-        //     {
-        //         from: translationRequest.fromLanguageCode,
-        //         to: translationRequest.toLanguageCode,
-        //     }
-        // );
-        // console.log('translation: ', translation);
-        // return translation;
+        [translation] = await translate.translate(
+            translationRequest.incomingSentence,
+            {
+                from: translationRequest.fromLanguageCode,
+                to: translationRequest.toLanguageCode,
+            }
+        );
+        console.log('translation: ', translation);
     } catch (err) {
         console.log('ERR: ', err);
     }
 
     // TODO mock
-    translation = 'some translation';
+    // translation = 'some translation';
+
     return translation;
 };
 

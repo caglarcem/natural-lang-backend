@@ -11,11 +11,7 @@ const getLanguages = async (req: any, res: any, next: any) => {
 
 /** Translate text to text **/
 const getTranslatedText = async (req: any, res: any, next: any) => {
-    const translationRequest: TranslationRequest = {
-        incomingSentence: req.query.incomingSentence,
-        fromLanguageCode: req.query.fromLanguageCode,
-        toLanguageCode: req.query.toLanguageCode,
-    };
+    const translationRequest: TranslationRequest = req.query;
 
     const translation = await translateText(translationRequest);
 
@@ -29,6 +25,8 @@ const getTranslatedSpeech = async (
     next: NextFunction
 ): Promise<Buffer> => {
     const translationRequest: TranslationRequest = {
+        inputMode: req.query.inputMode as 'speech' | 'text',
+        incomingSpeech: req.query.incomingSpeech as string,
         incomingSentence: req.query.incomingSentence as string,
         fromLanguageCode: req.query.fromLanguageCode as string,
         toLanguageCode: req.query.toLanguageCode as string,
